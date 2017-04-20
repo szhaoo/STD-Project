@@ -1,0 +1,38 @@
+<ion-view id="page12" style="background-color:#CAEBF2;" class=" ">
+    <ion-nav-title>
+    {{clinic.Name}}
+    </ion-nav-title>
+
+    <ion-content padding="true" class="has-header">
+    <div style="padding:10px;">
+        <ion-list id="clinic2ExtraServices-list9" class=" ">
+        	<h3 style = "text-align: center"><b>About This Clinic</b></h3>
+
+            <ion-item id="clinic2ExtraServices-list-item44" class="  "> <b>Phone:</b> {{clinic.phonenumber}}</ion-item>
+            <ion-item id="clinic2ExtraServices-list-item45" class=" item-text-wrap "><b>Address:</b> {{clinic.Streetaddress}} {{clinic.Largerarea}}</ion-item>
+            <ion-item id="clinic2ExtraServices-list-item46" class=" item-text-wrap "><b>Hours:</b><br>
+            Sunday: {{clinic.Sunday}}<br>
+            Monday: {{clinic.Monday}}<br>
+            Tuesday: {{clinic.Tuesday}}<br>
+            Wednesday: {{clinic.Wednesday}}<br>
+            Thursday: {{clinic.Thursday}}<br>
+            Friday: {{clinic.Friday}}<br>
+            Saturday: {{clinic.Saturday}}
+
+
+
+            </ion-item>
+            
+        </ion-list>
+        </div>
+        <div style = "padding: 10px;">
+        <h3 style = "text-align: center"><b> Services provided</b></h3>
+        	<ion-item ng-repeat="(label, offered) in clinic.offers[0]" style="text-align: center"
+        	ng-if="offered && label != 'id' && label != 'clinicId' && label != 'other'">
+        	{{label}}
+        	</ion-item>
+        </div>
+    </ion-content>
+
+
+</ion-view>
